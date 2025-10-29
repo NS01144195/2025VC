@@ -1,0 +1,42 @@
+/* ドロップダウンメニューのベーススタイル */
+.ddmenu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: #cc0000;
+}
+
+.ddmenu li {
+    width: 125px;
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+}
+
+/* メインメニューのスタイル */
+.ddmenu a {
+    background-color: #cc0000;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+/* サブメニューのスタイル */
+.ddmenu ul {
+    display: none;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+}
+
+ul.ddmenu a:hover {
+    background-color: #ffdddd;
+    color: #dd0000;
+}
+
+ul.ddmenu li:hover ul {
+    display: block;
+}
