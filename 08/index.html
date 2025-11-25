@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptを使った簡単な電卓</title>
+    <script>
+        function calculate(operation) {
+            var v1 = parseFloat(document.getElementById("a").value);
+            var v2 = parseFloat(document.getElementById("b").value);
+            if (isNaN(v1) || isNaN(v2)) {
+                document.getElementById("kotae").value = "数値を入れてください";
+                return;
+            }
+            var ans;
+            var symbol;
+            switch (operation) {
+                case "add":
+                    ans = v1 + v2;
+                    symbol = "+";
+                    break;
+                case "sub":
+                    ans = v1 - v2;
+                    symbol = "−";
+                    break;
+                case "mul":
+                    ans = v1 * v2;
+                    symbol = "×";
+                    break;
+                case "div":
+                    if (v2 === 0) {
+                        document.getElementById("kotae").value = "0で割れません";
+                        return;
+                    }
+                    ans = v1 / v2;
+                    symbol = "÷";
+                    break;
+            }
+            document.getElementById("kotae").value = ans;
+            addHistoryEntry(v1, symbol, v2, ans);
+        }
+
+        function addHistoryEntry(a, symbol, b, result) {
+            var entry = document.createElement("li");
+            entry.textContent = `${a} ${symbol} ${b} = ${result}`;
+            document.getElementById("history").prepend(entry);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>2つの数の計算</h1>
+    <form onsubmit="return false;">
+        <label>A= <input type="text" id="a" placeholder="数値を入力" /></label><br />
+        <label>B= <input type="text" id="b" placeholder="数値を入力" /></label><br />
+        <input type="button" value="足し算" onclick="calculate('add')" />
+        <input type="button" value="引き算" onclick="calculate('sub')" />
+        <input type="button" value="掛け算" onclick="calculate('mul')" />
+        <input type="button" value="割り算" onclick="calculate('div')" /><br />
+        答え= <input type="text" id="kotae" readonly />
+    </form>
+    <section>
+        <h2>計算履歴</h2>
+        <ul id="history"></ul>
+    </section>
+</body>
+</html>
