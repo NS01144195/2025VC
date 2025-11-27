@@ -19,7 +19,13 @@ body {
   background: radial-gradient(circle at top, #0b0b0b 0%, #030303 70%);
   margin: 0;
   min-height: 100vh;
+  line-height: 1.75;
 }
+
+h1, h2, h3 {
+  line-height: 1.3;
+}
+
 
 header {
   padding: 2rem 5vw;
@@ -112,7 +118,7 @@ header {
   gap: 0.5rem;
 }
 
-.ddmenu > li {
+.ddmenu>li {
   position: relative;
   flex: 1 1 0;
 }
@@ -130,7 +136,7 @@ header {
   transition: color 0.2s ease;
 }
 
-.ddmenu li:hover > a {
+.ddmenu li:hover>a {
   color: var(--color-sub);
 }
 
@@ -146,7 +152,7 @@ header {
   display: none;
 }
 
-.ddmenu li:hover > ul {
+.ddmenu li:hover>ul {
   display: block;
 }
 
@@ -183,6 +189,7 @@ header {
   margin: 0 0 1rem;
   letter-spacing: 0.05em;
 }
+
 .hero-copy h1::after {
   content: "";
   display: block;
@@ -272,9 +279,18 @@ header {
   border-left: 3px solid var(--color-sub);
   color: var(--color-text);
 }
-.hero-illustration .details a { color: var(--color-sub); }
-.hero-illustration .details a:visited { color: var(--color-sub); }
-.hero-illustration .details a:hover { color: var(--color-sub); }
+
+.hero-illustration .details a {
+  color: var(--color-sub);
+}
+
+.hero-illustration .details a:visited {
+  color: var(--color-sub);
+}
+
+.hero-illustration .details a:hover {
+  color: var(--color-sub);
+}
 
 .hero-photo {
   margin-top: 1.5rem;
@@ -310,7 +326,16 @@ header {
   font-size: clamp(2.4rem, 3vw, 3.2rem);
   margin: 0 0 0.8rem;
 }
-.page-hero h1::after{content:"";display:block;height:3px;margin-top:0.6rem;background:var(--color-sub);width:100%;max-width:12ch;}
+
+.page-hero h1::after {
+  content: "";
+  display: block;
+  height: 3px;
+  margin-top: 0.6rem;
+  background: var(--color-sub);
+  width: 100%;
+  max-width: 12ch;
+}
 
 .page-hero p {
   color: rgba(248, 247, 243, 0.9);
@@ -366,6 +391,7 @@ header {
   margin-top: 0;
   display: inline-block;
 }
+
 .section-card h2::after {
   content: "";
   display: block;
@@ -421,8 +447,14 @@ header {
   color: var(--color-sub);
   text-decoration: none;
 }
-.footer a:visited { color: var(--color-sub); }
-.footer a:hover { color: var(--color-sub); }
+
+.footer a:visited {
+  color: var(--color-sub);
+}
+
+.footer a:hover {
+  color: var(--color-sub);
+}
 
 .footer-return {
   display: inline-flex;
@@ -477,12 +509,12 @@ header {
     width: 100%;
   }
 
-  .ddmenu > li {
+  .ddmenu>li {
     width: 100%;
     flex: 0 0 auto;
   }
 
-  .ddmenu > li > a {
+  .ddmenu>li>a {
     border: none;
     border-radius: 0;
     padding: 0.9rem 1rem;
@@ -494,7 +526,7 @@ header {
     text-align: left;
   }
 
-  .ddmenu > li:last-child > a {
+  .ddmenu>li:last-child>a {
     border-bottom: none;
   }
 
